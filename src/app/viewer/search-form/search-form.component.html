@@ -1,4 +1,9 @@
 <form #searchForm="ngForm" (submit)="submit()">
     <input type="search" name="subreddit" #searchInput [(ngModel)]="subredditInput" autocomplete="off">
+    <div *ngIf="subreddits && subreddits.length > 0" class="autocomplete-box">
+        <ul>
+            <li *ngFor="let sub of subreddits" class="sub" (click)="setSubreddit($event)">{{sub}}</li>
+        </ul>
+    </div>
     <button class="btn">Set Subreddit</button>
 </form>

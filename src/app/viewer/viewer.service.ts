@@ -23,7 +23,7 @@ export class ViewerService {
             .toPromise();
     }
 
-    searchSubreddits(query: string): Promise<any> {
+    searchSubreddits(query: string): Promise<string[]> {
         return this.http.get(`${this.redditApi}/search?q=${query}&type=sr`)
             .map(response => response.json())
             .map(data => data.data.children)
