@@ -1,0 +1,4 @@
+<form #searchForm="ngForm" (submit)="submit()">
+    <input type="search" name="subreddit" #searchInput [(ngModel)]="subredditInput" autocomplete="off">
+    <button class="btn">Set Subreddit</button>
+</form>

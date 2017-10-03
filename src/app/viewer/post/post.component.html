@@ -1,0 +1,15 @@
+<li>
+    <h3 class="post-title"><a href="{{post.url}}" alt="Reddit link" target="_blank">{{post.title}}</a></h3>
+    <p class="post-domain">{{post.domain}}</p>
+    <p class="post-score">{{post.score}}</p>
+    <p class="tagline">
+        Submitted
+        <time title="{{post.created_utc}}" class="post-created-time">{{ post.created_utc | timeDistance }}</time>
+        ago by
+        <a href="https://reddit.com/user/{{post.author}}" class="post-author">{{post.author}}</a>
+        <span class="post-flair" *ngIf="post.author_flair_text"> {{post.author_flair_text}}</span>
+    </p>
+    <p class="post-comments">
+        <a href="https://reddit.com{{post.permalink}}" target="_blank"><span class="post-number-of-comments" *ngIf="post.num_comments > 0">{{post.num_comments}}</span> comment<span *ngIf="post.num_comments > 1">s</span></a>
+    </p>
+</li>
